@@ -27,7 +27,10 @@ function createPassword() {
   const includeUppercase = document.getElementById("includeUppercase").checked;
   const includeNumbers = document.getElementById("includeNumbers").checked;
   const includeSpecialChars = document.getElementById("includeSpecialChars").checked;
-  const passwordLength = document.getElementById("passwordLength").value;
+  let passwordLength = document.getElementById("passwordLength").value;
+
+  // Ensure password length is within the valid range
+  passwordLength = Math.max(6, Math.min(14, passwordLength));
 
   let chars = "";
   if (includeLowercase) chars += lowercaseLetters;
@@ -49,12 +52,10 @@ function copyPassword() {
   inputEl.setSelectionRange(0, 9999);
   navigator.clipboard.writeText(inputEl.value);
 }
-// Restrict the input field to accept only valid values
+
+// Update password length value on range input change
+const lengthValueEl = document.getElementById("lengthValue");
 document.getElementById("passwordLength").addEventListener("input", () => {
-    const passwordLength = parseInt(document.getElementById("passwordLength").value);
-    if (isNaN(passwordLength) || passwordLength < 6) {
-      document.getElementById("passwordLength").value = 6;
-    } else if (passwordLength > 15) {
-      document.getElementById("passwordLength").value = 15;
-    }
-  });
+  const passwordLength = document.getElementById("passwordLength").value;
+  lengthValueEl.textContent = passwordLength;
+});
