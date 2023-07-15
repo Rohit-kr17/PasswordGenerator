@@ -14,7 +14,7 @@ The Random Password Generator is a web application that allows users to generate
 
 ## Demo
 
-You can try out the Random Password Generator by visiting the following link: [Random Password Generator Demo](https://your-demo-link-here)
+You can try out the Random Password Generator by visiting the following link: [Random Password Generator Demo](https://rohit-kr17.github.io/RandomPasswordGenerator/)
 
 ## Installation
 
