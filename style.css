@@ -20,7 +20,7 @@ body {
   
   .password-container {
     background-color: #C5DFF8;
-    width: 600px;
+    width: 450px;
     height: auto; /*Changed from 200px to auto */
     padding: 28px;
     border-radius: 10px;
